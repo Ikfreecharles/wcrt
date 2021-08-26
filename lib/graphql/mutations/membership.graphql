@@ -1,0 +1,15 @@
+mutation MembershipCreate($onlineAccount: ID!, $role: ID!, $group: ID!) {
+  membershipCreate(
+    relationInput: {
+      ownedBy: $onlineAccount
+      definedBy: $role
+      administers: $group
+    }
+  ) {
+    ...MembershipPerson
+  }
+}
+
+mutation MembershipDelete($membership: ID!) {
+  membershipDelete(id: $membership)
+}

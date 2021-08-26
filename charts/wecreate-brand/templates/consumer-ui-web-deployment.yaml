@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{if .Values.nameOverride}}{{.Values.nameOverride}}{{else}}consumer-ui-web{{end}}
+spec:
+  replicas: {{.Values.replicaCount | default 1}}
+  selector:
+    matchLabels:
+      app: {{if .Values.nameOverride}}{{.Values.nameOverride}}{{else}}consumer-ui-web{{end}}
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: {{if .Values.nameOverride}}{{.Values.nameOverride}}{{else}}consumer-ui-web{{end}}
+        tier: frontend
+    spec:
+      hostname: {{if .Values.nameOverride}}{{.Values.nameOverride}}{{else}}consumer-ui-web{{end}}
+      imagePullSecrets:
+        {{- range $secret := .Values.image.pullSecrets}}
+        - name: {{$secret}}
+        {{- end}}
+      containers:
+      - name: consumer-ui-web
+        image: {{.Values.image.repository}}:{{.Values.image.tag}}
+        imagePullPolicy: {{.Values.image.pullPolicy | default "Always"}}
+        ports:
+        - containerPort: {{.Values.port | default "3000"}}
+        readinessProbe:
+          tcpSocket:
+            port: {{.Values.port | default "3000"}}
+          initialDelaySeconds: 180
+          periodSeconds: 60
+        livenessProbe:
+          tcpSocket:
+            port: {{$.Values.port| default "3000"}}
+          initialDelaySeconds: 120
+          periodSeconds: 50
+        env:
+        - name: GRAPHQL_URL
+          value: "{{.Values.graphql.url}}"
+        {{- range $key, $value := .Values.env}}
+        {{- if $value}}
+        - name: {{$key}}
+          value: "{{$value}}"
+        {{- end}}
+        {{- end}}

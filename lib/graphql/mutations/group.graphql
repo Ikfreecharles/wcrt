@@ -1,0 +1,58 @@
+mutation GroupCreate(
+  $name: String!
+  $info: String!
+  $intro: String!
+  $contactInfo: String!
+  $impulse: ID
+) {
+  groupCreate(
+    input: {
+      name: $name
+      info: $info
+      intro: $intro
+      contactInfo: $contactInfo
+      visibility: PUBLIC
+    }
+    relationInput: { covers: $impulse }
+  ) {
+    ...GroupTeaser
+  }
+}
+
+mutation GroupModify(
+  $group: ID!
+  $name: String!
+  $info: String!
+  $intro: String!
+  $contactInfo: String!
+) {
+  groupModify(
+    id: $group
+    modification: {
+      name: $name
+      info: $info
+      intro: $intro
+      contactInfo: $contactInfo
+    }
+  ) {
+    ...GroupTeaser
+  }
+}
+
+mutation GroupAssign($group: ID!, $image: ID, $category: ID, $address: ID) {
+  groupSetImagedByImageRelation(source: $group, target: $image) {
+    ...GroupTeaser
+  }
+
+  groupSetCategorizedByCategoryRelation(source: $group, target: $category) {
+    ...GroupTeaser
+  }
+
+  groupSetLocatedByAddressRelation(source: $group, target: $address) {
+    ...GroupTeaser
+  }
+}
+
+mutation groupDelete($group: ID!) {
+  groupDelete(id: $group)
+}

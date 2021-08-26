@@ -1,0 +1,17 @@
+fragment MembershipInvite on MembershipInvite {
+  id
+  createdAt
+  text
+
+  managedBy {
+    ...AgentAvatar
+  }
+
+  receivedBy {
+    id
+
+    represents {
+      ...AgentAvatar
+    }
+  }
+}

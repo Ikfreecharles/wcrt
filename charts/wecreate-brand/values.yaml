@@ -1,0 +1,111 @@
+# Default values for wecreate.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: harbor.ops.we-create.io/wecreate/consumer-ui-web
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: ['harbor-registry']
+
+imagePullSecrets: []
+nameOverride: ''
+fullnameOverride: ''
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+port: 3000
+env:
+  # Application metadata.
+  NEXT_PUBLIC_APP_NAME: ''
+  NEXT_PUBLIC_APP_URL: ''
+
+  # API endpoints.
+  NEXT_PUBLIC_GATEWAY_URL: ''
+  NEXT_PUBLIC_LOGIN_URL: ''
+  NEXT_PUBLIC_MESSAGING_URL: ''
+  NEXT_PUBLIC_FUNCTION_UPLOAD_URL: ''
+  NEXT_PUBLIC_CDN_URL: ''
+  NEXT_PUBLIC_HELPDESK_URL: ''
+
+  # Authentication details.
+  OAUTH_ID: ''
+  OAUTH_SECRET: ''
+  NEXTAUTH_URL: ''
+  NEXTAUTH_SECRET: ''
+  HELPDESK_TOKEN: ''
+
+  # Boolean-like feature flags to activate unpublished features.
+  NEXT_PUBLIC_FEATURE_SEARCH: false
+  NEXT_PUBLIC_FEATURE_NOTIFICATION: false
+
+  # Customization options. Leave empty to disable customization.
+  NEXT_PUBLIC_CUSTOM_EMBED: ''
+  NEXT_PUBLIC_CUSTOM_EMBED_URL: ''
+  NEXT_PUBLIC_CUSTOM_COLOR_PRIMARY: ''
+  NEXT_PUBLIC_CUSTOM_COLOR_SECONDARY: ''
+  NEXT_PUBLIC_CUSTOM_COLOR_DARK_PRIMARY: ''
+  NEXT_PUBLIC_CUSTOM_COLOR_DARK_SECONDARY: ''
+  NEXT_PUBLIC_CUSTOM_LOCATION: ''
+
+graphql:
+  url: https://graph.dev.we-create.io
+
+service:
+  type: ClusterIP
+  port: 80
+
+domain:
+  fqdn:
+    main: dev.we-create.io
+    forward: ''
+ingress:
+  enabled: true
+#  hosts:
+#    - host: dev.we-create.io
+#      paths: []
+#  tls: []
+#    - secretName: chart-example-tls
+#      hosts:
+#        - chart-example.local
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

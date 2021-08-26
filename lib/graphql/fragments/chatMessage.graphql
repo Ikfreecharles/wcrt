@@ -1,0 +1,7 @@
+fragment ChatMessage on ChatMessage {
+  id
+  createdAt
+  authorId
+  channelId
+  content
+}

@@ -1,0 +1,19 @@
+overwrite: true
+schema:
+  - ${GRAPHQL_CODEGEN_URL:lib/graphql/schema.graphql}
+  - 'lib/graphql/schema.client.graphql'
+documents: 'lib/graphql/**/*.graphql'
+generates:
+  lib/graphql/generated/index.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      scalars:
+        DateTime: Date
+  lib/graphql/generated/possibleTypes.json:
+    plugins:
+      - 'fragment-matcher'
+    config:
+      apolloClientVersion: 3

@@ -1,0 +1,9 @@
+fragment ChatChannel on ChatChannel {
+  id
+  unreadCount
+  newCount
+
+  messages {
+    ...ChatMessage
+  }
+}

@@ -1,0 +1,5 @@
+query ChatChannel($id: ID!) {
+  chatChannel(id: $id) @client {
+    ...ChatChannel
+  }
+}

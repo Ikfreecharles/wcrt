@@ -1,0 +1,28 @@
+fragment MembershipPerson on Membership {
+  id
+  createdAt
+
+  definedBy {
+    id
+    name
+  }
+
+  ownedBy {
+    id
+
+    represents {
+      id
+
+      ...AgentAvatar
+    }
+  }
+}
+
+fragment MembershipGroup on Membership {
+  id
+  createdAt
+
+  administers {
+    ...GroupTeaser
+  }
+}

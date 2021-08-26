@@ -1,0 +1,10 @@
+query Person(
+  $id: ID!
+  $createsContentCursor: String
+  $createsCommentCursor: String
+  $createsRatingCursor: String
+) {
+  person(id: $id) {
+    ...PersonProfile
+  }
+}

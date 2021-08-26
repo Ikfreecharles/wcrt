@@ -1,0 +1,45 @@
+mutation ImpulseCreate($title: String!, $intro: String!, $person: ID!) {
+  impulseCreate(
+    input: { title: $title, intro: $intro, visibility: PUBLIC }
+    relationInput: { createdByPerson: $person, managedBy: [] }
+  ) {
+    ...ImpulseTeaser
+  }
+}
+
+mutation ImpulseModify($impulse: ID!, $title: String!, $intro: String!) {
+  impulseModify(id: $impulse, modification: { title: $title, intro: $intro }) {
+    ...ImpulseTeaser
+  }
+}
+
+mutation ImpulseAssign(
+  $impulse: ID!
+  $images: [ID!]!
+  $categories: [ID!]!
+  $address: ID
+) {
+  impulseModifyImagedByImageRelation(
+    source: $impulse
+    target: $images
+    operation: SET
+  ) {
+    ...ImpulseTeaser
+  }
+
+  impulseModifyCategorizedByCategoryRelation(
+    source: $impulse
+    target: $categories
+    operation: SET
+  ) {
+    ...ImpulseTeaser
+  }
+
+  impulseSetLocatedByAddressRelation(source: $impulse, target: $address) {
+    ...ImpulseTeaser
+  }
+}
+
+mutation ImpulseDelete($impulse: ID!) {
+  impulseDelete(id: $impulse)
+}

@@ -1,0 +1,23 @@
+type Query {
+  messagingStats: MessagingStats
+  chatChannel(id: ID!): ChatChannel
+}
+
+type MessagingStats {
+  unreadCount: Int!
+}
+
+type ChatChannel {
+  id: ID!
+  unreadCount: Int!
+  newCount: Int!
+  messages: [ChatMessage!]
+}
+
+type ChatMessage {
+  id: ID!
+  createdAt: DateTime!
+  authorId: ID
+  channelId: ID
+  content: String
+}

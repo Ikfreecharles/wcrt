@@ -1,0 +1,135 @@
+fragment ContentTeaser on Content {
+  __typename
+
+  ...ArticleTeaser
+  ...ImpulseTeaser
+  ...TopicTeaser
+}
+
+fragment ContentSummary on Content {
+  ...ContentMeta
+  ...ContentImages
+  ...ContentAuthor
+  ...ContentStats
+
+  title
+}
+
+fragment ContentMeta on Content {
+  ...ContentState
+
+  __typename
+  id
+  createdAt
+  updatedAt
+}
+
+fragment ContentImages on Content {
+  imagedBy(orderBy: { createdAt: { ascending: true, priority: 1 } }) {
+    edges {
+      node {
+        ...Document
+      }
+    }
+  }
+}
+
+fragment ContentAuthor on Content {
+  createdByPerson {
+    ...AgentSignature
+  }
+
+  createdByGroup {
+    ...AgentSignature
+  }
+}
+
+fragment ContentCategories on Content {
+  categorizedBy(orderBy: { name: { ascending: true, priority: 1 } }) {
+    edges {
+      node {
+        ...Category
+      }
+    }
+  }
+}
+
+fragment ContentLocation on Content {
+  locatedByAddress {
+    ...Address
+  }
+}
+
+fragment ContentState on Content {
+  _viewer {
+    ratedBy(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+      count
+    }
+
+    commentedBy(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+      count
+    }
+  }
+}
+
+fragment ContentPermissions on Content {
+  _permissions {
+    update
+  }
+}
+
+fragment ContentStats on Content {
+  ratingStats: ratedBy(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+  ) {
+    count
+  }
+
+  commentStats: commentedBy(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+  ) {
+    count
+  }
+}
+
+fragment ContentRatings on Content {
+  ratedBy(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+    count
+
+    edges {
+      node {
+        ...Rating
+      }
+    }
+  }
+}
+
+fragment ContentComments on Content {
+  commentedBy(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 4, afterCursor: $commentedByCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...Comment
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+fragment ContentTopics on Content {
+  curatedBy(orderBy: { updatedAt: { ascending: false, priority: 1 } }) {
+    edges {
+      node {
+        ...TopicTeaser
+      }
+    }
+  }
+}

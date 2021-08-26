@@ -1,0 +1,58 @@
+mutation ArticleCreate(
+  $title: String!
+  $intro: String!
+  $text: String!
+  $group: ID!
+) {
+  articleCreate(
+    input: { title: $title, intro: $intro, text: $text, visibility: PUBLIC }
+    relationInput: { createdByGroup: $group, managedBy: [$group] }
+  ) {
+    ...ArticleTeaser
+  }
+}
+
+mutation ArticleModify(
+  $article: ID!
+  $title: String!
+  $intro: String!
+  $text: String!
+) {
+  articleModify(
+    id: $article
+    modification: { title: $title, intro: $intro, text: $text }
+  ) {
+    ...ArticleTeaser
+  }
+}
+
+mutation ArticleAssign(
+  $article: ID!
+  $images: [ID!]!
+  $categories: [ID!]!
+  $address: ID
+) {
+  articleModifyImagedByImageRelation(
+    source: $article
+    target: $images
+    operation: SET
+  ) {
+    ...ArticleTeaser
+  }
+
+  articleModifyCategorizedByCategoryRelation(
+    source: $article
+    target: $categories
+    operation: SET
+  ) {
+    ...ArticleTeaser
+  }
+
+  articleSetLocatedByAddressRelation(source: $article, target: $address) {
+    ...ArticleTeaser
+  }
+}
+
+mutation ArticleDelete($article: ID!) {
+  articleDelete(id: $article)
+}

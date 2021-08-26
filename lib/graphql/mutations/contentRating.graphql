@@ -1,0 +1,10 @@
+mutation ContentRatingCreate($agent: ID!, $content: ID!) {
+  contentRatingCreate(relationInput: { createdBy: $agent, rates: $content }) {
+    ...Rating
+    ...ContentRatingTeaser
+  }
+}
+
+mutation ContentRatingDelete($contentRating: ID!) {
+  contentRatingDelete(id: $contentRating)
+}

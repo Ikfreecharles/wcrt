@@ -1,0 +1,27 @@
+fragment AgentAvatar on Agent {
+  __typename
+  id
+  name
+
+  imagedBy {
+    ...Document
+  }
+}
+
+fragment AgentSignature on Agent {
+  ...AgentAvatar
+
+  info
+}
+
+fragment AgentLocation on Agent {
+  locatedByAddress {
+    ...Address
+  }
+}
+
+fragment AgentPermissions on Agent {
+  _permissions {
+    update
+  }
+}

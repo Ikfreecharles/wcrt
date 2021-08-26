@@ -1,0 +1,137 @@
+query Group(
+  $id: ID!
+  $createsArticleCursor: String
+  $createsTopicCursor: String
+) {
+  group(id: $id) {
+    ...GroupProfile
+  }
+}
+
+query GroupMembers($id: ID!, $cursor: String) {
+  group(id: $id) {
+    id
+
+    administeredBy(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      count
+
+      edges {
+        node {
+          ...MembershipPerson
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query GroupMembershipInvites($id: ID!, $cursor: String) {
+  group(id: $id) {
+    id
+
+    managesMembershipInvite(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+      filter: { isAccepted_eq: null }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      count
+
+      edges {
+        node {
+          ...MembershipInvite
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query GroupMembershipRequests($id: ID!, $cursor: String) {
+  group(id: $id) {
+    id
+
+    receives(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+      filter: { isAccepted_eq: null }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      count
+
+      edges {
+        node {
+          ...MembershipRequest
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query GroupContents($id: ID!, $cursor: String) {
+  group(id: $id) {
+    id
+
+    managesContent(
+      orderBy: { createdAt: { ascending: false, priority: 1 } }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      count
+
+      edges {
+        node {
+          id
+          createdAt
+          title
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query GroupTasks($id: ID!, $cursor: String) {
+  group(id: $id) {
+    id
+
+    managesTask(
+      orderBy: {
+        completed: { ascending: true, priority: 1 }
+        completedAt: { ascending: false, priority: 2 }
+        createdAt: { ascending: false, priority: 3 }
+      }
+      pagination: { first: 100, afterCursor: $cursor }
+    ) {
+      count
+
+      edges {
+        node {
+          ...Task
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

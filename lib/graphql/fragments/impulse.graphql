@@ -1,0 +1,42 @@
+fragment Impulse on Impulse {
+  ...ContentMeta
+  ...ContentAuthor
+  ...ContentImages
+  ...ContentCategories
+  ...ContentLocation
+  ...ContentComments
+  ...ContentRatings
+  ...ContentTopics
+  ...ContentPermissions
+  ...ImpulseGroups
+
+  title
+  intro
+  relevance @client
+}
+
+fragment ImpulseTeaser on Impulse {
+  ...ContentSummary
+
+  relevance @client
+}
+
+fragment ImpulseGroups on Impulse {
+  coveredBy(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 4, afterCursor: $coveredByCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...GroupPreview
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

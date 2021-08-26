@@ -1,0 +1,25 @@
+mutation MembershipInviteCreate(
+  $group: ID!
+  $onlineAccount: ID!
+  $text: String
+) {
+  membershipInviteCreate(
+    input: { text: $text }
+    relationInput: { managedBy: $group, receivedBy: $onlineAccount }
+  ) {
+    ...MembershipInvite
+  }
+}
+
+mutation MembershipInviteModify($membershipInvite: ID!, $isAccepted: Boolean!) {
+  membershipInviteModify(
+    id: $membershipInvite
+    modification: { isAccepted: $isAccepted }
+  ) {
+    ...MembershipInvite
+  }
+}
+
+mutation MembershipInviteDelete($membershipInvite: ID!) {
+  membershipInviteDelete(id: $membershipInvite)
+}

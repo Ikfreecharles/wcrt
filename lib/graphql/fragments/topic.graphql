@@ -1,0 +1,40 @@
+fragment Topic on Topic {
+  ...ContentMeta
+  ...ContentAuthor
+  ...ContentImages
+  ...ContentCategories
+  ...ContentLocation
+  ...ContentPermissions
+
+  title
+  intro
+
+  curates(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+    edges {
+      node {
+        ...ContentSummary
+      }
+    }
+  }
+
+  createdByGroup {
+    ...AgentSignature
+
+    intro
+
+    creates(
+      type: [TOPIC]
+      orderBy: { updatedAt: { ascending: false, priority: 1 } }
+    ) {
+      edges {
+        node {
+          ...TopicTeaser
+        }
+      }
+    }
+  }
+}
+
+fragment TopicTeaser on Topic {
+  ...ContentSummary
+}

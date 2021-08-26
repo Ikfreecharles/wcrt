@@ -1,0 +1,11 @@
+query AccountSignature($account: ID!) {
+  account(id: $account) {
+    id
+
+    ... on OnlineAccount {
+      represents {
+        ...AgentSignature
+      }
+    }
+  }
+}

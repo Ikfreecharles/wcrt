@@ -1,0 +1,9 @@
+query Addresses {
+  addresses(orderBy: { addressLocality: { ascending: true, priority: 1 } }) {
+    edges {
+      node {
+        ...Address
+      }
+    }
+  }
+}

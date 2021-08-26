@@ -1,0 +1,25 @@
+fragment Comment on Comment {
+  ...CommentAuthor
+
+  id
+  createdAt
+  text
+}
+
+fragment CommentTeaser on Comment {
+  ...Comment
+
+  __typename
+
+  comments {
+    __typename
+    id
+    title
+  }
+}
+
+fragment CommentAuthor on Comment {
+  createdBy {
+    ...AgentSignature
+  }
+}

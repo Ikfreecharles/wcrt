@@ -1,0 +1,24 @@
+mutation MembershipRequestCreate($group: ID!, $text: String) {
+  membershipRequestCreate(
+    input: { text: $text }
+    relationInput: { receivedBy: $group }
+  ) {
+    ...MembershipRequest
+  }
+}
+
+mutation MembershipRequestModify(
+  $membershipRequest: ID!
+  $isAccepted: Boolean!
+) {
+  membershipRequestModify(
+    id: $membershipRequest
+    modification: { isAccepted: $isAccepted }
+  ) {
+    ...MembershipRequest
+  }
+}
+
+mutation MembershipRequestDelete($membershipRequest: ID!) {
+  membershipRequestDelete(id: $membershipRequest)
+}

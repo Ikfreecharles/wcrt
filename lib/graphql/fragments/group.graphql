@@ -1,0 +1,116 @@
+fragment GroupCategories on Group {
+  categorizedBy {
+    ...Category
+  }
+}
+
+fragment GroupMembers on Group {
+  administeredBy(orderBy: { createdAt: { ascending: true, priority: 1 } }) {
+    count
+
+    edges {
+      node {
+        ...MembershipPerson
+      }
+    }
+  }
+}
+
+fragment GroupOrigin on Group {
+  covers {
+    id
+  }
+}
+
+fragment GroupChat on Group {
+  chatChannel
+}
+
+fragment GroupState on Group {
+  _viewer {
+    administeredBy(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+      count
+
+      edges {
+        node {
+          definedBy {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment GroupArtifacts on Group {
+  createsArticle: creates(
+    type: [ARTICLE]
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 10, afterCursor: $createsArticleCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...ContentTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+
+  createsTopic: creates(
+    type: [TOPIC]
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 10, afterCursor: $createsTopicCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...ContentTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+fragment GroupProfile on Group {
+  ...AgentSignature
+  ...AgentLocation
+  ...AgentPermissions
+  ...GroupCategories
+  ...GroupMembers
+  ...GroupOrigin
+  ...GroupChat
+  ...GroupState
+  ...GroupArtifacts
+
+  intro
+  contactInfo
+}
+
+fragment GroupTeaser on Group {
+  ...AgentSignature
+  ...AgentLocation
+  ...GroupCategories
+  ...GroupMembers
+  ...GroupChat
+
+  __typename
+  intro
+}
+
+fragment GroupPreview on Group {
+  ...AgentSignature
+  ...GroupMembers
+
+  intro
+}

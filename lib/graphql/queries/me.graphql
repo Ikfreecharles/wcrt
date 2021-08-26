@@ -1,0 +1,241 @@
+query MyAccountInfo {
+  me {
+    id
+    createdAt
+    email
+
+    represents {
+      ...AgentSignature
+
+      intro
+
+      locatedByAddress {
+        ...Address
+      }
+
+      createsImpulse: createsContent(
+        type: [IMPULSE]
+        orderBy: { createdAt: { ascending: false, priority: 1 } }
+      ) {
+        count
+      }
+
+      createsComment(
+        orderBy: { createdAt: { ascending: false, priority: 1 } }
+      ) {
+        count
+      }
+
+      createsRating(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+        count
+      }
+    }
+
+    ownsMembership(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+      count
+    }
+
+    ownsMembershipRequest(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+    ) {
+      count
+    }
+
+    receives(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+      filter: { isAccepted_not_eq: null }
+    ) {
+      count
+    }
+  }
+}
+
+query MyImpulses($cursor: String) {
+  me {
+    id
+
+    represents {
+      id
+
+      createsContent(
+        type: [IMPULSE]
+        orderBy: { createdAt: { ascending: false, priority: 1 } }
+        pagination: { first: 50, afterCursor: $cursor }
+      ) {
+        edges {
+          node {
+            id
+            createdAt
+            title
+          }
+        }
+
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+  }
+}
+
+query MyComments($cursor: String) {
+  me {
+    id
+
+    represents {
+      id
+
+      createsComment(
+        orderBy: { createdAt: { ascending: false, priority: 1 } }
+        pagination: { first: 50, afterCursor: $cursor }
+      ) {
+        edges {
+          node {
+            id
+            createdAt
+
+            comments {
+              id
+              title
+            }
+          }
+        }
+
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+  }
+}
+
+query MyRatings($cursor: String) {
+  me {
+    id
+
+    represents {
+      id
+
+      createsRating(
+        orderBy: { createdAt: { ascending: false, priority: 1 } }
+        pagination: { first: 50, afterCursor: $cursor }
+      ) {
+        edges {
+          node {
+            id
+            createdAt
+
+            ... on ContentRating {
+              rates {
+                id
+                title
+              }
+            }
+
+            ... on CommentRating {
+              rates {
+                comments {
+                  id
+                  title
+                }
+              }
+            }
+          }
+        }
+
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+  }
+}
+
+query MyMemberships($cursor: String) {
+  me {
+    id
+
+    ownsMembership(
+      orderBy: { createdAt: { ascending: false, priority: 1 } }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      edges {
+        node {
+          id
+          createdAt
+
+          administers {
+            id
+            name
+          }
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query MyMembershipRequests($cursor: String) {
+  me {
+    id
+
+    ownsMembershipRequest(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+      filter: { isAccepted_eq: null }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      edges {
+        node {
+          id
+          createdAt
+
+          receivedBy {
+            id
+            name
+          }
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query MyMembershipInvites($cursor: String) {
+  me {
+    id
+
+    receives(
+      orderBy: { createdAt: { ascending: true, priority: 1 } }
+      filter: { isAccepted_eq: null }
+      pagination: { first: 50, afterCursor: $cursor }
+    ) {
+      edges {
+        node {
+          id
+          createdAt
+
+          managedBy {
+            id
+            name
+          }
+        }
+      }
+
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

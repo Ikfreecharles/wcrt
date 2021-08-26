@@ -1,0 +1,21 @@
+fragment Article on Article {
+  ...ContentMeta
+  ...ContentAuthor
+  ...ContentImages
+  ...ContentCategories
+  ...ContentLocation
+  ...ContentRatings
+  ...ContentComments
+  ...ContentTopics
+  ...ContentPermissions
+
+  title
+  intro
+  text
+}
+
+fragment ArticleTeaser on Article {
+  ...ContentSummary
+
+  intro
+}

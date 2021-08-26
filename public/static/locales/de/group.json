@@ -1,0 +1,66 @@
+{
+  "action": {
+    "addMembers": "Mitglieder hinzufügen",
+    "deleteGroup": "Gruppe löschen"
+  },
+  "explain": {
+    "groupDelete": "Das Löschen der Gruppe kann nicht rückgängig gemacht werden. Inhalte, die mit der Gruppe in Verbindung stehen, werden dabei ebenfalls gelöscht. Möchtest du deine Mitgliedschaft beenden, ohne die Gruppe zu löschen?"
+  },
+  "label": {
+    "groupSettings": "Gruppen-Einstellungen",
+    "groupTools": "Gruppen-Werkzeuge",
+    "publicGroupProfile": "Öffentliches Gruppen-Profil"
+  },
+  "notice": {
+    "groupDeleted": "Gruppe gelöscht.",
+    "inviteNotSent": "Einladung konnte nicht gesendet werden.",
+    "inviteSent": "Einladung gesendet.",
+    "memberAdded": "Mitglied hinzugefügt.",
+    "memberNotAdded": "Mitglied konnte nicht hinzugefügt werden."
+  },
+  "placeholder": {
+    "chat": {
+      "message": "Der Gruppenchat befindet sich aktuell in Vorbereitung und wird in Kürze zur Verfügung stehen. Bitte versuch es in einigen Minuten erneut.",
+      "title": "Noch ein bisschen Geduld"
+    },
+    "meetings": {
+      "message": "Der Gruppe steht ein eigener Video-Meeting-Raum zur Verfügung, der von allen Mitgliedern rund um die Uhr genutzt werden kann.",
+      "title": "Euer digitaler Treffpunkt"
+    }
+  },
+  "tool": {
+    "applications": {
+      "title": "Anträge"
+    },
+    "calendar": {
+      "title": "Kalender"
+    },
+    "chat": {
+      "title": "Austausch"
+    },
+    "contents": {
+      "title": "Netzwerk-Inhalte"
+    },
+    "documents": {
+      "title": "Gemeinsame Dokumente"
+    },
+    "files": {
+      "title": "Dateiablage"
+    },
+    "meetings": {
+      "title": "Video-Meetings"
+    },
+    "members": {
+      "title": "Mitglieder"
+    },
+    "polls": {
+      "title": "Umfragen"
+    },
+    "settings": {
+      "title": "Gruppen-Einstellungen"
+    },
+    "tasks": {
+      "title": "Aufgaben"
+    }
+  }
+}

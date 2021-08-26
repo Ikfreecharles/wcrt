@@ -1,0 +1,15 @@
+query RatingOfContent($agent: ID!, $content: ID!) {
+  contentRatings(
+    relationsFilter: {
+      createdBy: { id_in: [$agent] }
+      rates: { id_in: [$content] }
+    }
+    orderBy: { createdAt: { ascending: true, priority: 1 } }
+  ) {
+    edges {
+      node {
+        ...Rating
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+mutation TaskCreate($title: String!, $group: ID!) {
+  taskCreate(
+    input: { title: $title, completed: false }
+    relationInput: { managedBy: [$group] }
+  ) {
+    ...Task
+  }
+}
+
+mutation TaskModify($task: ID!, $title: String, $completed: Boolean) {
+  taskModify(
+    id: $task
+    modification: { title: $title, completed: $completed }
+  ) {
+    ...Task
+  }
+}
+
+mutation TaskDelete($task: ID!) {
+  taskDelete(id: $task)
+}

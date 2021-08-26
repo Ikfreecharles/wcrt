@@ -1,0 +1,84 @@
+fragment Person on Person {
+  ...AgentSignature
+  ...AgentLocation
+  ...AgentPermissions
+
+  intro
+}
+
+fragment PersonMemberships on Person {
+  representedBy {
+    ownsMembership(orderBy: { createdAt: { ascending: false, priority: 1 } }) {
+      count
+
+      edges {
+        node {
+          ...MembershipGroup
+        }
+      }
+    }
+  }
+}
+
+fragment PersonArtifacts on Person {
+  createsContent(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 10, afterCursor: $createsContentCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...ContentTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+
+  createsComment(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 10, afterCursor: $createsCommentCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...CommentTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+
+  createsRating(
+    type: [CONTENT_RATING]
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    pagination: { first: 10, afterCursor: $createsRatingCursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...ContentRatingTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+fragment PersonProfile on Person {
+  ...Person
+  ...PersonMemberships
+  ...PersonArtifacts
+}

@@ -1,0 +1,66 @@
+{
+  "action": {
+    "addMembers": "Add members",
+    "deleteGroup": "Delete group"
+  },
+  "explain": {
+    "groupDelete": "Deleting the group cannot be undone. Content associated with the group will also be deleted. Do you want to cancel your membership without deleting the group?"
+  },
+  "label": {
+    "groupSettings": "Group settings",
+    "groupTools": "Group tools",
+    "publicGroupProfile": "Public group profile"
+  },
+  "notice": {
+    "groupDeleted": "Group deleted.",
+    "inviteNotSent": "Invite could not be sent.",
+    "inviteSent": "Invite sent.",
+    "memberAdded": "Member added.",
+    "memberNotAdded": "Member could not be added."
+  },
+  "placeholder": {
+    "chat": {
+      "message": "The group chat is currently in preparation and will be available shortly. Please try again in a few minutes.",
+      "title": "A little more patience"
+    },
+    "meetings": {
+      "message": "The group has its own video meeting room, which can be used by all members around the clock.",
+      "title": "Your digital meeting point"
+    }
+  },
+  "tool": {
+    "applications": {
+      "title": "Applications"
+    },
+    "calendar": {
+      "title": "Calendar"
+    },
+    "chat": {
+      "title": "Chat"
+    },
+    "contents": {
+      "title": "Network contents"
+    },
+    "documents": {
+      "title": "Shared documents"
+    },
+    "files": {
+      "title": "File storage"
+    },
+    "meetings": {
+      "title": "Video meetings"
+    },
+    "members": {
+      "title": "Members"
+    },
+    "polls": {
+      "title": "Polls"
+    },
+    "settings": {
+      "title": "Group settings"
+    },
+    "tasks": {
+      "title": "Tasks"
+    }
+  }
+}

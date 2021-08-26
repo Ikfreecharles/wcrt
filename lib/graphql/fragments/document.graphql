@@ -1,0 +1,4 @@
+fragment Document on Document {
+  id
+  resourceLocation
+}

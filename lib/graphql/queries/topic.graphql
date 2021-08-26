@@ -1,0 +1,5 @@
+query Topic($id: ID!) {
+  topic(id: $id) {
+    ...Topic
+  }
+}

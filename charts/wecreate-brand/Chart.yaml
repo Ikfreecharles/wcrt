@@ -1,0 +1,17 @@
+apiVersion: v1
+name: wecreate-brand
+description: WeCreate Consumer Brand
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.8.0
+home: https://wecreate.world
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: 1.16.0
+
+maintainers:
+  - name: timonweber
+    email: timon.weber@we-create.io
+  - name: gigo1980
+    email: enrico.hofmann@we-create.io

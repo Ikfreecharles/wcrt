@@ -1,0 +1,5 @@
+query Impulse($id: ID!, $commentedByCursor: String, $coveredByCursor: String) {
+  impulse(id: $id) {
+    ...Impulse
+  }
+}

@@ -1,0 +1,9 @@
+query Categories {
+  categories(orderBy: { name: { ascending: true, priority: 1 } }) {
+    edges {
+      node {
+        ...Category
+      }
+    }
+  }
+}

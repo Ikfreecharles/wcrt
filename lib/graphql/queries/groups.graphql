@@ -1,0 +1,29 @@
+query Groups(
+  $cursor: String
+  $categories: [ID!]
+  $locations: [ID!]
+  $onlineAccounts: [ID!]
+) {
+  groups(
+    orderBy: { createdAt: { ascending: false, priority: 1 } }
+    relationsFilter: {
+      categorizedBy: { id_in: $categories }
+      locatedByAddress: { id_in: $locations }
+      administeredBy: { ownedBy: { id_in: $onlineAccounts } }
+    }
+    pagination: { first: 20, afterCursor: $cursor }
+  ) {
+    count
+
+    edges {
+      node {
+        ...GroupTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

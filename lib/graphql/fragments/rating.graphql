@@ -1,0 +1,15 @@
+fragment Rating on Rating {
+  id
+
+  createdBy {
+    ...AgentAvatar
+  }
+}
+
+fragment ContentRatingTeaser on ContentRating {
+  id
+
+  rates {
+    ...ContentTeaser
+  }
+}

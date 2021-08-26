@@ -1,0 +1,9 @@
+mutation CommentRatingCreate($agent: ID!, $comment: ID!) {
+  commentRatingCreate(relationInput: { createdBy: $agent, rates: $comment }) {
+    ...Rating
+  }
+}
+
+mutation CommentRatingDelete($commentRating: ID!) {
+  commentRatingDelete(id: $commentRating)
+}

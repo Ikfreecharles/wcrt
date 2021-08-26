@@ -1,0 +1,23 @@
+mutation PersonModify(
+  $person: ID!
+  $name: String!
+  $info: String!
+  $intro: String!
+) {
+  personModify(
+    id: $person
+    modification: { name: $name, info: $info, intro: $intro }
+  ) {
+    ...Person
+  }
+}
+
+mutation PersonAssign($person: ID!, $image: ID, $address: ID) {
+  personSetImagedByImageRelation(source: $person, target: $image) {
+    ...Person
+  }
+
+  personSetLocatedByAddressRelation(source: $person, target: $address) {
+    ...Person
+  }
+}

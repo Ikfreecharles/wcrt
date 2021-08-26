@@ -1,0 +1,26 @@
+query Feed(
+  $types: [FeedType!]
+  $categories: [ID!]
+  $locations: [ID!]
+  $cursor: String
+) {
+  feeds(
+    type: $types
+    relationsFilter: {
+      categorizedBy: { id_in: $categories }
+      locatedByAddress: { id_in: $locations }
+    }
+    pagination: { first: 10, afterCursor: $cursor }
+  ) {
+    edges {
+      node {
+        ...ContentTeaser
+      }
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

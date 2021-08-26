@@ -1,0 +1,15 @@
+query RatingOfComment($agent: ID!, $comment: ID!) {
+  commentRatings(
+    relationsFilter: {
+      createdBy: { id_in: [$agent] }
+      rates: { id_in: [$comment] }
+    }
+    orderBy: { createdAt: { ascending: true, priority: 1 } }
+  ) {
+    edges {
+      node {
+        ...Rating
+      }
+    }
+  }
+}

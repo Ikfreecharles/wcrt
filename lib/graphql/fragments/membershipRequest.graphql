@@ -1,0 +1,17 @@
+fragment MembershipRequest on MembershipRequest {
+  id
+  createdAt
+  text
+
+  receivedBy {
+    ...AgentAvatar
+  }
+
+  ownedBy {
+    id
+
+    represents {
+      ...AgentAvatar
+    }
+  }
+}

@@ -1,0 +1,19 @@
+query AccountSearch($value: String!) {
+  persons(
+    filter: { name_contains: $value }
+    orderBy: { name: { ascending: true, priority: 1 } }
+    pagination: { first: 10 }
+  ) {
+    count
+
+    edges {
+      node {
+        ...AgentSignature
+
+        representedBy {
+          id
+        }
+      }
+    }
+  }
+}

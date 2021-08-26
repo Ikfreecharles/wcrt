@@ -1,0 +1,417 @@
+{
+  "action": {
+    "accept": "Akzeptieren",
+    "add": "Hinzufügen",
+    "addImages": "Bilder hinzufügen",
+    "addTask": "Aufgabe hinzufügen",
+    "back": "Zurück",
+    "backToStart": "Zurück zur Startseite",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "confirm": "Bestätigen",
+    "contactSupport": "Support kontaktieren",
+    "copyLink": "Link kopieren",
+    "create": "Erstellen",
+    "createArticle": "Neuen Artikel erstellen",
+    "createGroup": "Neue Gruppe erstellen",
+    "createImpulse": "Neuen Impuls erstellen",
+    "decline": "Ablehnen",
+    "delete": "Löschen",
+    "discover": "Entdecken",
+    "edit": "Bearbeiten",
+    "editArticle": "Artikel bearbeiten",
+    "editGroup": "Gruppe bearbeiten",
+    "editImpulse": "Impuls bearbeiten",
+    "editTask": "Aufgabe bearbeiten",
+    "giveFeedback": "Feedback geben",
+    "goToInternalView": "Zur internen Ansicht wechseln",
+    "implementIdea": "Idee umsetzen",
+    "inputMessage": "Nachricht eingeben …",
+    "inputProblemDescription": "Problem beschreiben …",
+    "inputReply": "Antwort eingeben …",
+    "inputSolution": "Mögliche Lösung beschreiben …",
+    "invite": "Einladen",
+    "joinMeeting": "Meeting beitreten",
+    "learnMore": "Mehr erfahren",
+    "leaveMeeting": "Meeting verlassen",
+    "maximize": "Maximieren",
+    "minimize": "Minimieren",
+    "next": "Weiter",
+    "participate": "Mitmachen",
+    "previous": "Zurück",
+    "publish": "Veröffentlichen",
+    "readMore": "Weiterlesen",
+    "reply": "Antworten",
+    "requestMembership": "Beitrittsanfrage senden",
+    "reset": "Zurücksetzen",
+    "save": "Speichern",
+    "searchForPersons": "Nach Personen suchen …",
+    "send": "Absenden",
+    "sendMessage": "Nachricht senden",
+    "share": "Teilen",
+    "showExternalContent": "Inhalt von {{service}} zeigen",
+    "showImage": "{{number, ordinal}} Bild anzeigen",
+    "showMore": "Mehr anzeigen",
+    "showPrevious": "Ältere {{type}} anzeigen",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "start": "Starten",
+    "subscribe": "Abonnieren",
+    "support": "Unterstützen",
+    "tryAgain": "Erneut versuchen",
+    "typeMessage": "Nachricht eingeben …",
+    "unsubscribe": "Nicht mehr abonnieren",
+    "unsupport": "Nicht mehr unterstützen",
+    "uploadImage": "Bild hochladen",
+    "view": "Ansehen",
+    "viewGroup": "Gruppe ansehen",
+    "viewImpulse": "Impuls ansehen"
+  },
+  "alert": {
+    "comeBackLater": {
+      "body": "Zurzeit sind noch keine Inhalte vorhanden. Bitte schau später noch einmal vorbei.",
+      "title": "Hier gibt es noch nichts zu sehen"
+    },
+    "error": {
+      "body": "Deine Anfrage konnte nicht richtig verarbeitet werden. Bitte kontaktiere den Support.",
+      "title": "Etwas ist schief gelaufen"
+    },
+    "messageSent": {
+      "body": "Deine Nachricht ist gut bei uns angekommen. Herzlichen Dank für deine Mithilfe!",
+      "title": "Nachricht gesendet"
+    },
+    "notFound": {
+      "body": "Der ausgewählte Inhalt konnte nicht gefunden werden.",
+      "title": "Nichts gefunden"
+    },
+    "publish": {
+      "body": "Der von dir erstellte Inhalt ist nun für andere sichtbar.",
+      "title": "Erfolgreich veröffentlicht"
+    },
+    "remoteError": {
+      "body": "Der Server meldet eine fehlerhafte Antwort. Bitte versuche es in Kürze erneut oder kontaktiere den Support.",
+      "title": "Fehler bei der Datenabfrage"
+    }
+  },
+  "content": {
+    "category": {
+      "administration": "Verwaltung",
+      "culture": "Kultur",
+      "economy": "Wirtschaft",
+      "education": "Bildung",
+      "environment": "Umwelt",
+      "housing": "Wohnen",
+      "leisure": "Freizeit",
+      "planning": "Stadtentwicklung",
+      "social": "Soziales",
+      "traffic": "Verkehr"
+    },
+    "image": "{{type}}-Bild",
+    "type": {
+      "article": "Artikel",
+      "impulse": "Impuls",
+      "topic": "Thema"
+    }
+  },
+  "count": {
+    "content": "{{count}} Inhalt",
+    "content_plural": "{{count}} Inhalte",
+    "contribution": "{{count}} Beitrag",
+    "contribution_plural": "{{count}} Beiträge",
+    "group": "{{count}} Gruppe",
+    "group_plural": "{{count}} Gruppen",
+    "invite": "{{count}} Einladung",
+    "invite_plural": "{{count}} Einladungen",
+    "member": "{{count}} Mitglied",
+    "member_plural": "{{count}} Mitglieder",
+    "membershipRequest": "{{count}} Beitrittsanfrage",
+    "membershipRequest_plural": "{{count}} Beitrittsanfragen"
+  },
+  "empty": {
+    "chat": "Noch keine Nachrichten vorhanden",
+    "contents": "Noch keine Inhalte vorhanden",
+    "groups": "Noch keine Gruppen vorhanden",
+    "profile": {
+      "articles": "{{name}} hat noch keine Artikel veröffentlicht",
+      "events": "{{name}} hat noch keine Veranstaltungen erstellt",
+      "impulses": "{{name}} hat noch keine Impulse erstellt",
+      "polls": "{{name}} hat noch keine Umfragen erstellt",
+      "replies": "{{name}} hat noch nicht geantwortet",
+      "supports": "{{name}} hat noch nichts unterstützt"
+    },
+    "replies": "Bisher noch keine Antworten",
+    "supporters": "Bisher noch keine Unterstützer*innen",
+    "tasks": "Keine Aufgaben vorhanden"
+  },
+  "explain": {
+    "articleForm": {
+      "categories": "Durch die Auswahl von passenden Kategorien erhält der Artikel mehr Sichtbarkeit.",
+      "intro": "Diese kurze Zusammenfassung wird in der Vorschau des Artikels angezeigt.",
+      "locations": "Auch das Hinterlegen eines relevanten Ortes macht es anderen leichter, den Artikel zu finden.",
+      "text": "Der eigentliche Artikelinhalt ist nur auf der Artikelseite zu sehen.",
+      "title": "Ein kurzer und aussagekräftiger Titel hilft anderen, auf den ersten Blick zu verstehen, worum es geht."
+    },
+    "feedEmpty": "Die von dir gewählten Filterkriterien ergaben keine Treffer.",
+    "feedback": "Wir möchten gern besser werden. Bitte sag uns Bescheid, wenn dir ein Problem auffällt oder du sonstiges Verbesserungspotenzial entdeckst.",
+    "group": {
+      "impulse": "Diese Gruppe ist aus einem Impuls heraus entstanden.",
+      "membershipRequest": "Die Gruppe „{{group}}“ ist derzeit offen für weitere Mitstreiter*innen.",
+      "ownMembership": "Du bist Mitglied von „{{group}}“ und kannst auf die internen Gruppen-Werkzeuge zugreifen."
+    },
+    "groupCreate": {
+      "description": "Auf der Profilseite wird eine ausführlichere Beschreibung deiner Gruppe zu sehen sein.",
+      "descriptionWithImpulse": "Die Beschreibung deiner Lösungsidee wird unterhalb des Impulses zu sehen sein. Bringe dein Anliegen daher möglichst gut verständlich auf den Punkt. Weitere Details können dann innerhalb der Gruppe ausgearbeitet werden.",
+      "intro": "Eine Gruppe ermöglicht neue Formen von produktiver Zusammenarbeit. Über einen Gruppenchat, geteilte Aufgabenlisten und Dokumente können sowohl neue als auch bestehende Gruppen ihre Arbeit online organisieren.",
+      "introWithImpulse": "Gründe eine Gruppe, um deine Idee gemeinsam mit anderen in die Tat umzusetzen. Eine Gruppe stellt die passenden Werkzeuge zur Verfügung, um eure Kommunikation und die Weiterentwicklung des Vorhabens zu unterstützen und darüber hinaus eine nachhaltige Umsetzung zu ermöglichen.",
+      "moreDetails": "Damit mehr Menschen auf deine Gruppe aufmerksam werden können, ergänze bitte noch die folgenden Informationen.",
+      "moreDetailsWithImpulse": "Wir haben die folgenden Angaben vom ursprünglichen Impuls übernommen. Falls nötig kannst du sie aber noch anpassen.",
+      "success": {
+        "message": "Die Gruppe wurde erfolgreich erstellt und ist ab sofort über die Gruppensuche für andere auffindbar. Du kannst sie später auch in deinem Profil oder deinen persönlichen Daten wiederfinden.",
+        "title": "Deine neue Gruppe ist bereit"
+      },
+      "summary": "Die folgenden Informationen helfen anderen dabei, auf den ersten Blick zu verstehen, worum es in der Gruppe geht. Falls es bereits ein Logo oder Gruppenfoto gibt, kannst du es hier als Profilbild hochladen.",
+      "summaryWithImpulse": "Die folgenden Informationen helfen anderen dabei, auf den ersten Blick zu verstehen, worum es in der Gruppe geht. Auf der nächsten Seite kannst du deinen Lösungsansatz ausführlicher beschreiben."
+    },
+    "groupForm": {
+      "contactInfo": "Bitte mache Angaben dazu, auf welche Weise Interessierte Kontakt zu euch aufnehmen können. Zum Beispiel, ob ihr eine Website habt, wie eure E-Mail-Adresse lautet oder wann eure regelmäßigen Treffen stattfinden.",
+      "contactInfoWithImpulse": "Bitte mache Angaben dazu, in welchen Bereichen du dir Unterstützung wünscht und auf welche Weise Interessierte zu dir Kontakt aufnehmen können.",
+      "info": "An vielen Stellen wird der Gruppennamen um eine zusätzliche Information ergänzt. Hier kannst du z.B. das Thema der Gruppe unterbringen.",
+      "intro": "Hier kannst du beschreiben, was euer Anliegen als Gruppe ist, wie ihr arbeitet und wie ihr zusammengefunden habt.",
+      "introWithImpulse": "Hier kannst du deinen Lösungsansatz beschreiben und wie du dir die Arbeit innerhalb der Gruppe vorstellst.",
+      "name": "Bitte verwende einen möglichst kurzen und einprägsamen Namen für deine Gruppe."
+    },
+    "impulse": {
+      "action": {
+        "group": "Du hast eine Lösungsidee und suchst dafür Mitstreiter*innen?",
+        "reply": "Du weißt, wie man das beschriebene Problem sofort lösen könnte?"
+      },
+      "relevance": "Die Relevanz eines Impulses ergibt sich aus seiner Aktualität sowie der Unterstützung und den Antworten, die er erhält.",
+      "reply": "Mit einer Antwort kannst du einen Lösungsvorschlag unterbreiten, einen Hinweis geben oder auch eine Rückfrage stellen. Deine Antwort wird unterhalb des Impulses zu sehen sein."
+    },
+    "impulseCreate": {
+      "intro": "Du hast eine Frage, einen Denkanstoß oder möchtest ein Problem benennen? Mit einem Impuls erreichst du Aufmerksamkeit für dein Anliegen und gibst außerdem anderen die Möglichkeit, dazu beizutragen.",
+      "introSolution": "Falls du selbst schon einen Lösungsvorschlag hast, kannst du ihn ebenfalls veröffentlichen und weitere Menschen dafür begeistern.",
+      "moreDetails": "Damit mehr Menschen auf deinen Impuls aufmerksam werden können, ergänze bitte noch die folgenden Informationen.",
+      "problem": "Bitte beschreibe im ersten Schritt zunächst das Problem. Was ist dir aufgefallen? Warum glaubst du, dass es Veränderung braucht? Wobei benötigst du Hilfe?",
+      "solution": "Hast du selbst schon eine Idee, wie man das von dir beschriebene Problem lösen könnte? Dann hast du hier die Möglichkeit, anderen von deinem Vorhaben zu berichten und Unterstützung dafür zu erhalten.",
+      "success": {
+        "message": "Ab jetzt kann dein Impuls von anderen entdeckt und unterstützt werden. Du kannst ihn selbst jederzeit in deinem Profil oder deinen persönlichen Daten wiederfinden.",
+        "title": "Impuls erfolgreich veröffentlicht"
+      }
+    },
+    "impulseForm": {
+      "categories": "Durch die Auswahl von passenden Kategorien erhält dein Impuls mehr Sichtbarkeit.",
+      "intro": "Details sind nicht verboten, aber bitte denke daran, dass andere schneller in das Thema einsteigen können, wenn du das Ganze so gut wie möglich auf den Punkt bringst.",
+      "locations": "Auch das Hinterlegen des betroffenen Ortes macht es anderen leichter, deinen Impuls zu finden.",
+      "solution": "Die von dir beschriebene Lösung wird unterhalb des Impulses als erste Antwort eingeblendet. Andere können so entweder deinen Vorschlag unterstützen oder eine eigene Antwort formulieren.",
+      "solutionLabel": "Ich habe bereits einen Lösungsvorschlag und möchte weitere Mitstreiter*innen dafür begeistern.",
+      "title": "Der Titel wird prominent dargestellt und ist damit das Erste, was andere von deinem Impuls sehen werden. Formuliere ihn daher wenn möglich als aktivierende Frage. Beispiel: Wie können wir unser Viertel grüner machen?"
+    },
+    "membershipRequest": "Durch eine Beitrittsanfrage erhält ein Gruppen-Admin deine Profil-Informationen. Wenn du möchtest, kannst du zusätzlich eine Nachricht hinterlassen.",
+    "personSearchEmpty": "Keine Personen für den gewählten Suchbegriff gefunden.",
+    "personalData": {
+      "impulses": "Du kannst die von dir erstellten Impulse jederzeit bearbeiten. Bitte achte jedoch darauf, dass das ursprüngliche Anliegen erhalten bleibt.",
+      "intro": "Deine Daten gehören nur dir allein und das wird auch so bleiben. Auf dieser Seite siehst du alle Informationen, die wir mit dir verknüpft haben. ✌️",
+      "membershipInvites": "Du wurdest von den folgenden Gruppen zur Zusammenarbeit eingeladen. Akzeptiere oder lehne eine Einladung ab, um zu antworten.",
+      "membershipRequests": "Du hast angefragt, Mitglied von den folgenden Gruppen zu werden. Lösche eine Anfrage, um sie zurückzuziehen.",
+      "memberships": "Deine Beteiligungen an öffentlichen Gruppen werden auf deinem Profil angezeigt. Um aus einer Gruppe auszutreten, lösche einfach die entsprechende Mitgliedschaft.",
+      "replies": "Damit das ursprüngliche Gespräch erhalten bleibt, können bereits vorhandene Antworten nicht mehr bearbeitet werden. Ein Löschen ist aber weiterhin möglich.",
+      "supports": "Wenn du Inhalte unterstützt, ist dies öffentlich sichtbar. Du kannst deine Unterstützung aber jederzeit widerrufen."
+    },
+    "profileForm": {
+      "info": "Damit andere direkt wissen, mit wem sie es zu tun haben, wird dein Name an vielen Stellen um eine zusätzliche Information ergänzt. Hier kannst du z.B. deinen Jobtitel unterbringen.",
+      "intro": "Diese Beschreibung wird auf deinem Profil zu sehen sein. Lass andere wissen, wer du bist und was dich begeistert.",
+      "name": "Verwende bitte deinen echten Vor- und Nachnamen. So zeigst du, dass man den von dir erstellten Inhalten vertrauen kann."
+    },
+    "support": "Gefällt dir dieser Inhalt? Drücke deine Zustimmung aus."
+  },
+  "format": {
+    "date": "{{date, D. MMMM YYYY}}",
+    "dateTime": "{{date, D. MMMM YYYY}} um {{date, H:mm}} Uhr",
+    "largeNumber": "{{number, large}}",
+    "relativeCreationDate": "{{date, relativePast}} erstellt",
+    "relativeDate": "{{date, relative}}",
+    "relativePastDate": "{{date, relativePast}}",
+    "relativePublishDate": "{{date, relativePast}} veröffentlicht",
+    "relativeUpdateDate": "{{date, relativePast}} aktualisiert",
+    "shortTime": "{{date, H:mm}}",
+    "simpleDate": "{{date, dddd, D. MMMM}}"
+  },
+  "label": {
+    "about": "Über",
+    "aboutMe": "Über mich",
+    "aboutUs": "Über uns",
+    "account": "Account",
+    "activity": "Aktivität",
+    "appearance": "Erscheinungsbild",
+    "areYouSure": "Bist du sicher?",
+    "articleContent": "Artikel-Inhalt",
+    "articles": "Artikel",
+    "ascending": "Aufsteigend",
+    "avatar": "Profilbild",
+    "briefIntro": "Kurzvorstellung",
+    "caption": "Untertitel",
+    "categories": "Themenbereiche",
+    "category": "Themenbereich",
+    "comingSoon": "Bald möglich",
+    "completed": "Erledigt",
+    "concern": "Anliegen",
+    "confirmation": "Bestätigung",
+    "contact": "Kontakt",
+    "contactInfo": "Kontaktinformationen",
+    "curator": "Kuratiert von",
+    "currentPassword": "Aktuelles Passwort",
+    "currentTopics": "Aktuelle Themen",
+    "descending": "Absteigend",
+    "description": "Beschreibung",
+    "display": "Darstellung",
+    "emailAddress": "E-Mail-Adresse",
+    "events": "Veranstaltungen",
+    "feedContent": "Neuste Inhalte",
+    "filter": "Filter",
+    "fullName": "Vollständiger Name",
+    "group": "Gruppe",
+    "groupFoundations": "Gruppengründungen",
+    "groupMemberships": "Gruppenmitgliedschaften",
+    "groups": "Gruppen",
+    "help": "Hilfe",
+    "imprint": "Impressum",
+    "impulseAuthor": "Impulsgeber*in",
+    "impulseTitle": "Impuls-Titel",
+    "impulses": "Impulse",
+    "impulsesCreated": "Erstellte Impulse",
+    "intro": "Zusammenfassung",
+    "invites": "Einladungen",
+    "language": "Sprache",
+    "loadingContent": "Inhalt wird geladen …",
+    "loadingImage": "Bild wird geladen …",
+    "loadingName": "Name wird geladen …",
+    "loadingPage": "Seite wird geladen …",
+    "location": "Ort",
+    "locations": "Orte",
+    "membershipInvites": "Gruppeneinladungen",
+    "membershipRequests": "Beitrittsanfragen",
+    "message": "Nachricht",
+    "moreDetails": "Weitere Angaben",
+    "moreTopics": "Weitere Themen",
+    "myGroups": "Meine Gruppen",
+    "myProfile": "Mein Profil",
+    "name": "Name",
+    "networkContents": "Netzwerk-Inhalte",
+    "new": "Neu",
+    "newActivity": "Neue Aktivität",
+    "newPassword": "Neues Passwort",
+    "newPasswordConfirmation": "Neues Passwort bestätigen",
+    "newTask": "Neue Aufgabe",
+    "optional": "Optional",
+    "participation": "Beteiligung",
+    "password": "Passwort",
+    "pendingMembershipRequests": "Offene Beitrittsanfragen",
+    "person": "Person",
+    "personalData": "Persönliche Daten",
+    "persons": "Personen",
+    "polls": "Umfragen",
+    "possibleSolution": "Mögliche Lösung",
+    "privacy": "Datenschutz",
+    "problemDescription": "Problembeschreibung",
+    "profile": "Profil",
+    "registeredSince": "Registriert seit",
+    "relatedTopics": "Verwandte Themen",
+    "relevance": "Relevanz",
+    "replies": "Antworten",
+    "repliesWritten": "Geschriebene Antworten",
+    "reply": "Antwort",
+    "search": "Suche",
+    "settings": "Einstellungen",
+    "subscriptions": "Abonnements",
+    "supporters": "Unterstützer*innen",
+    "supports": "Unterstützungen",
+    "supportsGiven": "Geleistete Unterstützungen",
+    "task": "Aufgabe",
+    "terms": "Nutzungsbedingungen",
+    "title": "Titel",
+    "types": "Inhaltstypen",
+    "unknown": "Unbekannt",
+    "uploadedImage": "Hochgeladenes Bild",
+    "videoMeeting": "Video-Meeting",
+    "welcome": "Willkommen! 👋"
+  },
+  "language": {
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "meta": {
+    "description": "Entdecke spannende Impulse und organisiere deine Gruppenarbeit über das WeCreate-Netzwerk."
+  },
+  "notice": {
+    "changesSaved": "Änderungen gespeichert.",
+    "connectionLost": "Verbindung abgebrochen.",
+    "connectionReestablished": "Verbindung wiederhergestellt.",
+    "contentDeleted": "Inhalt gelöscht.",
+    "contentPublished": "Inhalt veröffentlicht.",
+    "inviteAccepted": "Einladung akzeptiert.",
+    "inviteDeclined": "Einladung abgelehnt.",
+    "inviteNotAccepted": "Einladung konnte nicht akzeptiert werden.",
+    "inviteNotDeclined": "Einladung konnte nicht abgelehnt werden.",
+    "linkCopied": "Link in die Zwischenablage kopiert.",
+    "membershipRequested": "Beitrittsanfrage versendet.",
+    "messageSendError": "Nachricht konnte nicht gesendet werden.",
+    "messagesLoadError": "Nachrichten konnten nicht geladen werden.",
+    "messagesMarkAsReadError": "Nachrichten konnten nicht als gelesen markiert werden.",
+    "replyPublished": "Antwort veröffentlicht.",
+    "requestAccepted": "Anfrage akzeptiert.",
+    "requestDeclined": "Anfrage abgelehnt.",
+    "requestNotAccepted": "Anfrage konnte nicht akzeptiert werden.",
+    "requestNotDeclined": "Anfrage konnte nicht abgelehnt werden.",
+    "submitError": "Fehler beim Übermitteln des Formulars.",
+    "taskDeleted": "Aufgabe gelöscht.",
+    "uploadError": {
+      "generic": "Datei konnte nicht hochgeladen werden.",
+      "invalidType": "Ungültiges Dateiformat.",
+      "tooLarge": "Datei zu groß.",
+      "tooMany": "Zu viele Dateien."
+    }
+  },
+  "page": {
+    "404": {
+      "body": "Die aufgerufene Seite konnte nicht gefunden werden. Bitte kehre zurück zur Startseite.",
+      "title": "Seite nicht gefunden"
+    },
+    "groups": {
+      "placeholder": {
+        "body": "Wir arbeiten mit Hochdruck an neuen Funktionen. Bald wird es möglich sein, Gleichgesinnte zu finden und mit ihnen gemeinsam Projektideen in die Tat umzusetzen. Bleib gespannt!",
+        "title": "Gemeinsam etwas bewegen"
+      },
+      "title": "Gruppen"
+    },
+    "index": {
+      "title": "Netzwerk"
+    },
+    "personal": {
+      "placeholder": {
+        "body": "Mit einen Account hast du die Möglichkeit, Inhalte zu abonnieren und mit anderen in Kontakt zu treten. Bist du dabei?",
+        "title": "Dein digitales Zuhause"
+      },
+      "title": "Persönlich"
+    },
+    "search": {
+      "title": "Suche"
+    }
+  },
+  "palette": {
+    "dark": "Dunkles Farbschema",
+    "light": "Helles Farbschema"
+  },
+  "role": {
+    "groupAdmin": "Administrator",
+    "groupMember": "Mitglied"
+  },
+  "sort": {
+    "date": "Nach Datum sortieren"
+  },
+  "validation": {
+    "emailInUse": "Diese E-Mail-Adresse wird bereits von einem anderen Account genutzt.",
+    "emailInvalid": "Diese E-Mail-Adresse ist ungültig.",
+    "passwordInvalid": "Das angegebene Passwort ist nicht korrekt."
+  }
+}

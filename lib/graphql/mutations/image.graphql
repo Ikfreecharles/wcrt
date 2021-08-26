@@ -1,0 +1,9 @@
+mutation ImageCreate($name: String!) {
+  imageCreate(input: { name: $name }) {
+    signedID
+
+    created {
+      id
+    }
+  }
+}

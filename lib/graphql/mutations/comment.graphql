@@ -1,0 +1,12 @@
+mutation CommentCreate($text: String!, $agent: ID!, $content: ID!) {
+  commentCreate(
+    input: { text: $text }
+    relationInput: { createdBy: $agent, comments: $content }
+  ) {
+    ...Comment
+  }
+}
+
+mutation CommentDelete($comment: ID!) {
+  commentDelete(id: $comment)
+}
